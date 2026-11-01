@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bitrix24-mcp"
+name = "bitrix24-mcp-server"
 version = "0.1.0"
 description = "MCP server for Bitrix24: CRM deals, contacts, leads and tasks for AI agents"
 readme = "README.md"
