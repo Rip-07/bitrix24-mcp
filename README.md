@@ -1,5 +1,10 @@
 # bitrix24-mcp
 
+[![CI](https://github.com/Rip-07/bitrix24-mcp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Rip-07/bitrix24-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB.svg)](pyproject.toml)
+[![MCP SDK 2](https://img.shields.io/badge/MCP%20SDK-2.x-6E56CF.svg)](https://github.com/modelcontextprotocol/python-sdk)
+
 [English](#english) · [Русский](#русский)
 
 MCP server that lets AI agents (Claude, ChatGPT, Cursor, your own agents) work with a
@@ -86,6 +91,7 @@ MCP-эндпоинт: `http://127.0.0.1:8000/mcp`. Клиент должен п�
 | `MCP_TRANSPORT` | `stdio` | `stdio` или `http` |
 | `MCP_HOST` / `MCP_PORT` | `127.0.0.1` / `8000` | адрес HTTP-сервера |
 | `MCP_AUTH_TOKEN` | — | Bearer-токен, обязателен для `http` |
+| `MCP_ALLOW_NO_AUTH` | `false` | `true` разрешает `http` без токена (только доверенная сеть) |
 | `MCP_ALLOWED_HOSTS` | — | разрешённые заголовки Host (защита от DNS rebinding) |
 | `LOG_LEVEL` | `INFO` | уровень логов (пишутся в stderr) |
 
@@ -112,7 +118,10 @@ pytest -q && ruff check .
 ### Планы
 
 Компании, товары в сделках, звонки и чат-боты (`imbot`), события через исходящие
-вебхуки, OAuth-приложение для Маркетплейса Bitrix24. Предложения и PR приветствуются.
+вебхуки, OAuth-приложение для Маркетплейса Bitrix24. Предложения и PR приветствуются:
+см. [CONTRIBUTING.md](CONTRIBUTING.md), задачи с меткой
+[good first issue](https://github.com/Rip-07/bitrix24-mcp/labels/good%20first%20issue)
+и [Discussions](https://github.com/Rip-07/bitrix24-mcp/discussions).
 
 ---
 
@@ -143,6 +152,9 @@ rate-limit errors are retried with backoff, the Docker image runs as a non-root 
 ### Troubleshooting
 
 - `CERTIFICATE_VERIFY_FAILED` on macOS with the python.org installer: run `/Applications/Python 3.x/Install Certificates.command` or set `SSL_CERT_FILE=/etc/ssl/cert.pem`.
+
+**Contributing:** see [CONTRIBUTING.md](CONTRIBUTING.md); questions and use cases go to
+[Discussions](https://github.com/Rip-07/bitrix24-mcp/discussions).
 
 ## License
 
