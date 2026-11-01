@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: mailto:info@fahrentech.kz
+    about: Please report security problems privately by email, not in a public issue.
+  - name: Questions and use cases
+    url: https://github.com/Rip-07/bitrix24-mcp/discussions
+    about: Ask how to set something up or share how you use the server.

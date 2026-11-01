@@ -1,0 +1,43 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Do not include secrets (tokens, webhook URLs, passwords)
+        or internal addresses. Security problems go to info@fahrentech.kz, not here.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Configure ...
+        2. Run ...
+        3. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: Redact secrets before pasting.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Docker or not, language/runtime version
