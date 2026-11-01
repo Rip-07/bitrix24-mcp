@@ -1,0 +1,15 @@
+services:
+  bitrix24-mcp:
+    build: .
+    image: bitrix24-mcp:latest
+    container_name: bitrix24-mcp
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # Bind to localhost; publish through a reverse proxy with TLS if needed.
+      - "127.0.0.1:8000:8000"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

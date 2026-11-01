@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitrix24-mcp"
+version = "0.1.0"
+description = "MCP server for Bitrix24: CRM deals, contacts, leads and tasks for AI agents"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Askhat Akhtanov" }]
+requires-python = ">=3.10"
+dependencies = ["mcp>=2.3,<3"]
+keywords = ["mcp", "bitrix24", "crm", "ai", "claude", "model-context-protocol"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+bitrix24-mcp = "bitrix24_mcp.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/Rip-07/bitrix24-mcp"
+Issues = "https://github.com/Rip-07/bitrix24-mcp/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
