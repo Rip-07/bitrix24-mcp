@@ -3,7 +3,7 @@
 [![CI](https://github.com/Rip-07/bitrix24-mcp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Rip-07/bitrix24-mcp/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB.svg)](pyproject.toml)
-[![MCP SDK 2](https://img.shields.io/badge/MCP%20SDK-2.x-6E56CF.svg)](https://github.com/modelcontextprotocol/python-sdk)
+[![PyPI](https://img.shields.io/pypi/v/bitrix24-mcp-server.svg)](https://pypi.org/project/bitrix24-mcp-server/)
 
 [English](#english) · [Русский](#русский)
 
@@ -49,7 +49,7 @@ MCP server that lets AI agents (Claude, ChatGPT, Cursor, your own agents) work w
 ```sh
 claude mcp add bitrix24 \
   -e BITRIX24_WEBHOOK_URL="https://ваш-портал.bitrix24.kz/rest/1/xxxxxxxx/" \
-  -- uvx --from git+https://github.com/Rip-07/bitrix24-mcp bitrix24-mcp
+  -- uvx --from bitrix24-mcp-server bitrix24-mcp
 ```
 
 **Или к Claude Desktop** (`claude_desktop_config.json`):
@@ -59,12 +59,14 @@ claude mcp add bitrix24 \
   "mcpServers": {
     "bitrix24": {
       "command": "uvx",
-      "args": ["--from", "git+https://github.com/Rip-07/bitrix24-mcp", "bitrix24-mcp"],
+      "args": ["--from", "bitrix24-mcp-server", "bitrix24-mcp"],
       "env": { "BITRIX24_WEBHOOK_URL": "https://ваш-портал.bitrix24.kz/rest/1/xxxxxxxx/" }
     }
   }
 }
 ```
+
+Без uv: `pip install bitrix24-mcp-server`, затем команда `bitrix24-mcp`.
 
 **3. Спросите агента:** «покажи сделки на стадии "Переговоры"» или «найди контакт
 по номеру +7 701 123 45 67».
@@ -136,8 +138,10 @@ move deal stages, add timeline comments).
 ```sh
 claude mcp add bitrix24 \
   -e BITRIX24_WEBHOOK_URL="https://your-portal.bitrix24.com/rest/1/xxxxxxxx/" \
-  -- uvx --from git+https://github.com/Rip-07/bitrix24-mcp bitrix24-mcp
+  -- uvx --from bitrix24-mcp-server bitrix24-mcp
 ```
+
+Without uv: `pip install bitrix24-mcp-server`, then run `bitrix24-mcp`.
 
 Create the webhook under *Developer resources → Other → Inbound webhook* with only the
 scopes you need (`crm`, `task`, `user`). The URL is a secret.
